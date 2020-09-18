@@ -1,12 +1,13 @@
 #include <iostream>
 #include <algorithm>
+
 using namespace std;
 
 //To rotate the matrix:
 //1. Reverse each row
 //2. Take transpose
 
-void rotateMatrixSTL(int a[1000][1000], int n)
+void rotateMatrixSTL(int a[100][100], int n)
 {
   //rotate each row
   for (int row = 0; row < n; row++)
@@ -14,7 +15,7 @@ void rotateMatrixSTL(int a[1000][1000], int n)
     //reverse() takes two arguments
     //starting of container
     //end of container (not included)
-    //reverse() define in <algorithm>
+    //reverse() defined in <algorithm>
     for (int i = 0; i < n; i++)
     {
       reverse(a[i], a[i] + n);
@@ -46,7 +47,7 @@ void rotateMatrixSTL(int a[1000][1000], int n)
   }
 }
 
-void rotateMatrix(int a[1000][1000], int n)
+void rotateMatrix(int a[100][100], int n)
 {
   //rotate each row
   int startCol, endCol;
@@ -56,9 +57,10 @@ void rotateMatrix(int a[1000][1000], int n)
     endCol = n - 1;
     while (startCol < endCol)
     {
+      cout << startCol << " " << endCol << endl;
       swap(a[row][startCol], a[row][endCol]);
       startCol++;
-      endCol++;
+      endCol--;
     }
   }
 
@@ -90,7 +92,7 @@ int main()
   int n;
   cout << "Enter size of matrix: ";
   cin >> n;
-  int b[1000][1000] = {0};
+  int b[100][100];
   int value = 1;
   for (int i = 0; i < n; i++)
   {
@@ -110,7 +112,7 @@ int main()
   }
   cout << "Using normal swap" << endl;
   rotateMatrix(b, n);
-  cout << "Using stl revsere()" << endl;
-  rotateMatrixSTL(b, n);
+  //cout << "Using stl revsere()" << endl;
+  //rotateMatrixSTL(b, n);
   return 0;
 }

@@ -1,9 +1,9 @@
 #include <iostream>
+
 using namespace std;
 
-void spiralPrintMatrix(int a[][1000], int m, int n)
+void spiralPrintMatrix(int a[][100], int m, int n)
 {
-
   //Pointers
   int startRow = 0;
   int startCol = 0;
@@ -53,7 +53,7 @@ int main()
   int r, c;
   cout << "Enter number of rows and columns: ";
   cin >> r >> c;
-  int b[1000][1000] = {0};
+  int b[100][100] = {0};
   int value = 1;
   for (int i = 0; i < r; i++)
   {
