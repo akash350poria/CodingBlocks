@@ -21,10 +21,7 @@ void subSumMatrixUsingIndiContri(int a[][100], int m, int n)
         topLeft = (i + 1) * (j + 1);
       }
       bottomRight = (m - i) * (n - j);
-      //cout << "TL: " << topLeft << ",";
-      //cout << "BR: " << bottomRight << ",";
       numOfSubMatrices = topLeft * bottomRight;
-      //cout << "iS: " << numOfSubMatrices << endl;
       iSum = a[i][j] * numOfSubMatrices;
       sum += iSum;
     }
