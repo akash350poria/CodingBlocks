@@ -1,10 +1,11 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 void maxSubMatrixSum(int a[][100], int m, int n)
 {
   int revCMatrix[100][100] = {0};
-  int maxSum = 0;
+  int maxSum = INT_MIN;
   for (int i = m - 1; i >= 0; i--)
   {
     revCMatrix[i][n - 1] = a[i][n - 1];
