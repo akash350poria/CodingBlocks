@@ -11,16 +11,20 @@ void subMatrixSum(int a[][100], int m, int n)
     {
       for (int ri = li; ri < m; ri++)
       {
-        for (int rj = lj; lj < n; rj++)
+        for (int rj = lj; rj < n; rj++)
         {
           subMatixSum = a[ri][rj];
           if ((li - 1) >= 0 and (lj - 1) >= 0)
           {
-            subMatixSum = subMatixSum + a[li - 1][lj - 1] - a[li][lj - 1];
+            subMatixSum = subMatixSum + a[li - 1][lj - 1];
           }
-          if ((li - 1) >= 0 and (lj + 1) <= n)
+          if ((lj - 1) >= 0)
           {
-            subMatixSum -= a[li - 1][lj + 1];
+            subMatixSum -= a[ri][lj - 1];
+          }
+          if ((li - 1) >= 0)
+          {
+            subMatixSum -= a[li - 1][rj];
           }
           //subMatixSum = a[ri][rj] + a[li - 1][lj - 1] - a[li - 1][lj + 1] - a[li][lj - 1];
           sum = sum + subMatixSum;
@@ -28,6 +32,7 @@ void subMatrixSum(int a[][100], int m, int n)
       }
     }
   }
+  cout << "Sub matix sum is: ";
   cout << sum;
 }
 
@@ -54,14 +59,14 @@ void cummulativeSumMatrix(int a[][100], int m, int n)
       cMatrix[i][j] += cMatrix[i - 1][j];
     }
   }
-  // for (int i = 0; i < m; i++)
-  // {
-  //   for (int j = 0; j < n; j++)
-  //   {
-  //     cout << cMatrix[i][j] << " ";
-  //   }
-  //   cout << endl;
-  // }
+  for (int i = 0; i < m; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      cout << cMatrix[i][j] << " ";
+    }
+    cout << endl;
+  }
   subMatrixSum(cMatrix, m, n);
 }
 
