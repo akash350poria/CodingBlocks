@@ -8,7 +8,7 @@ void findPair(int arr[], int n, int key)
   sort(arr, arr + n);
   int i = 0, j = n - 1;
   int flag = 0;
-  while (i <= j)
+  while (i < j)
   {
     if (arr[i] + arr[j] == key)
     {
