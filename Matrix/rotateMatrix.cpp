@@ -57,7 +57,6 @@ void rotateMatrix(int a[100][100], int n)
     endCol = n - 1;
     while (startCol < endCol)
     {
-      cout << startCol << " " << endCol << endl;
       swap(a[row][startCol], a[row][endCol]);
       startCol++;
       endCol--;
