@@ -39,8 +39,7 @@ All except 2 all evens number would be set zero
 
 1st optimisation: Set all evens zero
 2nd optimisation: If element is set as one, set its mupltiples to zero
-3rd optimisation: While setting multiples of a num say 'i' to zero, instead of starting from '2*i' start loop from
-'i*i' 
+3rd optimisation: While setting multiples of a num say 'i' to zero, instead of starting from '2*i' start loop from 'i*i' 
 
 This method fails for element greater than 10^7
 */
@@ -77,11 +76,11 @@ void sievePrime()
 int main()
 {
   sievePrime();
-  long long n;
+  long long num;
   cout << "Enter a number: ";
-  cin >> n;
-  cout << "Prime numbers less than or equal to " << n << " are: ";
-  for (long long i = 2; i <= n; i++)
+  cin >> num;
+  cout << "Prime numbers less than or equal to " << num << " are: " << endl;
+  for (long long i = 2; i <= num; i++)
   {
     if (p[i] == 1)
     {
