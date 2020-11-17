@@ -35,7 +35,7 @@ void bubbleSortRecursive(int *b, int j, int n)
   {
     //If j points to last element that means you have shifted largest element for the current sub problem
     //Now sort for the remaining n-1 elements
-    bubbleSortRecursive(b, 0, n - 1);
+    return bubbleSortRecursive(b, 0, n - 1);
   }
 
   //Recursive case
