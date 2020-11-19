@@ -41,36 +41,6 @@ void insertAtHead(node *&head, int d)
   head = n;              //Make head point to newly created node
 }
 
-void insertInMiddle(node *&head, int d, int pos)
-{
-  //Insert new node after p nodes
-
-  //If pos=0 or linked is empty then insert at head
-  if (pos == 0 or head == NULL)
-  {
-    insertAtHead(head, d);
-    return;
-  }
-  //If pos is greater than length of the linked list then insert at end of the linked list
-  else if (pos > lengthOfList(head))
-  {
-    //insertAtTail()
-  }
-  //Insert after p nodes
-  else
-  {
-    //To insert after p nodes, iterate till p-1
-    node *temp = head;
-    node *n = new node(d);
-    for (int i = 0; i < pos - 1; i++)
-    {
-      temp = temp->next;
-    }
-    n->next = temp->next;
-    temp->next = n;
-  }
-}
-
 void insertAtTail(node *&head, int d)
 {
   //If linked list emepty
@@ -88,6 +58,36 @@ void insertAtTail(node *&head, int d)
     tail = tail->next;
   }
   tail->next = new node(d);
+}
+
+void insertInMiddle(node *&head, int d, int pos)
+{
+  //Insert new node after p nodes
+
+  //If pos=0 or linked is empty then insert at head
+  if (pos == 0 or head == NULL)
+  {
+    insertAtHead(head, d);
+    return;
+  }
+  //If pos is greater than length of the linked list then insert at end of the linked list
+  else if (pos > lengthOfList(head))
+  {
+    insertAtTail(head, d);
+  }
+  //Insert after p nodes
+  else
+  {
+    //To insert after p nodes, iterate till p-1
+    node *temp = head;
+    node *n = new node(d);
+    for (int i = 0; i < pos - 1; i++)
+    {
+      temp = temp->next;
+    }
+    n->next = temp->next;
+    temp->next = n;
+  }
 }
 
 void printList(node *head)
