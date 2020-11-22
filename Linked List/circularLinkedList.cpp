@@ -60,7 +60,7 @@ void deleteCircular(node *&head, int d)
   {
     head = head->next;
   }
-  node *temp;
+  node *temp = head;
   while (temp->next != del)
   {
     temp = temp->next;
@@ -93,6 +93,7 @@ int main()
   deleteCircular(head, 3);
   printCircular(head);
   deleteCircular(head, 1);
+  deleteCircular(head, 6);
   printCircular(head);
   // cout << head << endl;
   // node *temp = head;
